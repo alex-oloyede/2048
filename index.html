@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2048 Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>2048</h1>
+            <div class="score-container">
+                <div class="score-box">
+                    <div class="score-label">SCORE</div>
+                    <div id="score">0</div>
+                </div>
+                <div class="score-box">
+                    <div class="score-label">BEST</div>
+                    <div id="best-score">0</div>
+                </div>
+            </div>
+        </header>
+        
+        <div class="game-info">
+            <p>Join numbers to get to <strong>2048!</strong></p>
+            <div class="buttons">
+                <button id="new-game">New Game</button>
+                <button id="undo">Undo</button>
+            </div>
+        </div>
+        
+        <div class="game-container">
+            <div id="game-board" class="game-board"></div>
+            <div id="mobile-controls" class="mobile-controls">
+                <button id="up" class="control-btn">↑</button>
+                <button id="left" class="control-btn">←</button>
+                <button id="down" class="control-btn">↓</button>
+                <button id="right" class="control-btn">→</button>
+            </div>
+        </div>
+        
+        <div id="game-over-modal" class="modal">
+            <div class="modal-content">
+                <h2>Game Over!</h2>
+                <p>Your score: <span id="final-score">0</span></p>
+                <div id="name-input-container">
+                    <input type="text" id="player-name" placeholder="Enter your name" maxlength="20">
+                    <button id="save-score">Save Score</button>
+                </div>
+                <div id="score-saved" class="hidden">
+                    <p>Your score has been saved!</p>
+                </div>
+                <button id="try-again">Try Again</button>
+            </div>
+        </div>
+        
+        <div id="leaderboard-modal" class="modal">
+            <div class="modal-content">
+                <h2>Leaderboard</h2>
+                <table id="leaderboard-table">
+                    <thead>
+                        <tr>
+                            <th>Rank</th>
+                            <th>Name</th>
+                            <th>Score</th>
+                            <th>Date</th>
+                        </tr>
+                    </thead>
+                    <tbody id="leaderboard-body">
+                    </tbody>
+                </table>
+                <button id="close-leaderboard">Close</button>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <button id="show-leaderboard">View Leaderboard</button>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
